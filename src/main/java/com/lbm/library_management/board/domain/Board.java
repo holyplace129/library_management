@@ -16,7 +16,7 @@ public class Board {
     @JoinColumn(name = "userId")
     private User user;
 
-    @Enumerated(value = EnumType.STRING)
+    @Enumerated(EnumType.STRING)
     private Category category;
 
     private String title;
