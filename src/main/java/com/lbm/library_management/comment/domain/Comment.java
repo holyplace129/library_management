@@ -1,9 +1,8 @@
 package com.lbm.library_management.comment.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.lbm.library_management.board.domain.Board;
+import com.lbm.library_management.user.domain.User;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
@@ -13,6 +12,14 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "boardId")
+    private Board board;
+
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private User user;
 
     private String content;
 

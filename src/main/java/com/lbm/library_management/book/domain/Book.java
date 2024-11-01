@@ -1,9 +1,6 @@
 package com.lbm.library_management.book.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
@@ -24,6 +21,7 @@ public class Book {
 
     private LocalDateTime publisherYear;
 
+    @Enumerated(value = EnumType.STRING)
     private BookStatus bookStatus;
 
 

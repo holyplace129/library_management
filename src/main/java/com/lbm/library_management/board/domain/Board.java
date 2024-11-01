@@ -1,18 +1,23 @@
 package com.lbm.library_management.board.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.lbm.library_management.user.domain.User;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
 @Entity
-public class board {
+public class Board {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private User user;
+
+    @Enumerated(value = EnumType.STRING)
+    private Category category;
 
     private String title;
 
