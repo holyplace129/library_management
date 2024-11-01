@@ -17,9 +17,9 @@ public class Book {
 
     private String author;
 
-    private LocalDateTime publisher;
+    private String publisher;
 
-    private LocalDateTime publisherYear;
+    private Integer publisherYear;
 
     @Enumerated(value = EnumType.STRING)
     private BookStatus bookStatus;
